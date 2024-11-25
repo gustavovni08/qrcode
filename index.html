@@ -5,15 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <label>Insira os dados do QR Code:</label>
-    <br>
-    <input type="text" id="textInput" placeholder="Digite aqui">
-    <br>
-    <button id="generateButton">Gerar QR Code</button>
-    <button id="downloadButton" style="display: none;">Baixar QR Code</button>
-    <div id="qrcode" style="margin-top: 20px;"></div>
+    <div class="w-full min-h-[100vh] bg-gray-200 flex items-center flex-col justify-center space-y-2">
+        <label>Insira os dados do QR Code:</label>
+        <br>
+        <input type="text" id="textInput" class="bg-white shadow-md p-2 flex items-center rounded-full" placeholder="Digite aqui">
+        <br>
+        <button id="generateButton" class="bg-green-500 hover:scale-105 p-2 rounded-full shadow-md text-white">Gerar QR Code</button>
+        <div id="qrcode" style="margin: 20px;"></div>
+        <button id="downloadButton" class="bg-green-500 hover:scale-105 p-2 rounded-full shadow-md text-white" style="display: none;">Baixar QR Code</button>
+    </div>
 
     <script>
         var qrcode = new QRCode(document.getElementById("qrcode"), {
